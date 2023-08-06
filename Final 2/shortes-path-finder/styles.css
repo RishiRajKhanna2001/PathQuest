@@ -1,0 +1,65 @@
+    body {
+        background: rgb(58, 98, 33);
+        margin: 0px;
+        overflow: hidden;
+    }
+    
+    .gridcell {
+        float: left;
+    }
+    
+    .gridcell.blocked {
+        background: darkgrey;
+        border: 1px solid black;
+    }
+    
+    .gridcell.out-cell {
+        background-color: red;
+    }
+    
+    .gridcell.in-cell {
+        background-color: rgb(11, 248, 11);
+    }
+    
+    svg {
+        position: fixed;
+        z-index: -1;
+    }
+    
+    svg path {
+        fill: none;
+        stroke-width: 3px;
+        stroke: blue;
+    }
+    
+    .gridcell.visualStart {
+        animation-name: allVisitedOnce;
+        animation-duration: 1.5s;
+        animation-play-state: running;
+        animation-timing-function: ease-out;
+        animation-delay: 0;
+        animation-iteration-count: 1;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+    }
+    
+h1{
+    text-align: center;
+}
+
+    @keyframes allVisitedOnce {
+        0% {
+            background-color: rgba(0, 0, 66, .75);
+        }
+        50% {
+            background-color: rgba(17, 104, 217, .75);
+        }
+        75% {
+            transform: scale(1.2);
+            background-color: rgba(0, 217, 159, .75);
+        }
+        100% {
+            transform: scale(1);
+            background-color: rgba(0, 190, 218, .75);
+        }
+    }
